@@ -61,6 +61,10 @@ p, li{
     font-size: 16px;
 }
 
+li{
+    margin-bottom: 6px;
+}
+
 strong{
     /*font-family: 'Quicksand', sans-serif;
     font-weight: 800;*/
@@ -68,7 +72,28 @@ strong{
 }
 
 a{
-    color: #fff
+    color: #fff;
+    position: relative;
+    text-decoration: none;
+}
+a::after{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: translate3d(-50%,0,0);
+    transition: all 0.24s ease;
+}
+a:hover{
+   text-decoration: none;
+}
+
+a:hover::after{
+    transform: translate3d(-50%,0,0) scale(.9,1);
 }
 
 @media screen and (max-width: 650px){

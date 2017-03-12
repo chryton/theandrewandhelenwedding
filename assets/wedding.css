@@ -38,6 +38,7 @@ html, body{
     width: 80%;
     max-width: 760px;
     padding: 40px;
+    box-shadow: 2px 2px 15px #827d7d;
     background-color: #323875;
     color: #eeeeee;
     border-radius: 8px;

@@ -121,6 +121,10 @@ $app->get('/check', function (Request $request, Response $response){
 			$return_data['attendees'][1]['attendeeFood'] = $row[15];
 			$return_data['attendees'][2]['attendee'] = $row[16];
 			$return_data['attendees'][2]['attendeeFood'] = $row[17];
+			$return_data['attendees'][3]['attendee'] = $row[18];
+			$return_data['attendees'][3]['attendeeFood'] = $row[19];
+			$return_data['attendees'][4]['attendee'] = $row[20];
+			$return_data['attendees'][4]['attendeeFood'] = $row[21];
 
 			break;
 		}

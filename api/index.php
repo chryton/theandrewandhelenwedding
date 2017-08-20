@@ -102,7 +102,7 @@ $app->get('/check', function (Request $request, Response $response){
 	$service = new Google_Service_Sheets($client);
 
 	$spreadsheetId = SHEET_ID;
-	$range = 'A3:Q';
+	$range = 'A4:U';
 	$gresponse = $service->spreadsheets_values->get($spreadsheetId, $range);
 	$sheets_return = $gresponse->getValues();
 
@@ -143,9 +143,19 @@ $app->post('/update', function (Request $request, Response $response){
 	$optParams['valueInputOption'] = 'USER_ENTERED';
 	$spreadsheetId = SHEET_ID;
 	$row_id = explode("18", (string)$data['id']);
-	$range = 'L' . $row_id[0] .':R' . $row_id[0];
+	$range = 'K' . $row_id[0] .':U' . $row_id[0];
 
-	$requestBodyNames = array(array($data['message'], $data['attendees'][0]["name"], $data['attendees'][0]["food"], $data['attendees'][1]["name"], $data['attendees'][1]["food"], $data['attendees'][2]["name"], $data['attendees'][2]["food"]));
+	$requestBodyNames = array(
+		array(
+			$data['message']
+		)
+	);
+
+	for ($i=0; $i < count($data['attendees']); $i++) { 
+		$requestBodyNames[0][] = $data['attendees'][$i]["name"];
+		$requestBodyNames[0][] = $data['attendees'][$i]["food"];
+	}
+
 	$requestBodyStatus = array(array(true, $data['attending']));
 
 	$gdata = array();
@@ -166,9 +176,10 @@ $app->post('/update', function (Request $request, Response $response){
 	));
 	$result = $service->spreadsheets_values->batchUpdate($spreadsheetId, $body);	
 
-	$json_response = $response->withJson($gresponse);
+	$json_response = $response->withJson($result);
 	
-	return var_dump($data);
+	// return var_dump($requestBodyNames);
+	return $json_response;
 });
 
 $app->run();

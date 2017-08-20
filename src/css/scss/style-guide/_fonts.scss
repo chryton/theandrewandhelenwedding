@@ -1,0 +1,45 @@
+///////////////////
+// FONTS         //
+///////////////////
+
+
+
+
+///////////////////
+// TEMPLATES     //
+///////////////////
+
+// With path() function
+// @font-face {
+// 	font-family: '';
+// 	src: url(path('.eot', font, ''));
+// 	src: url(path('.eot?#iefix', font, '')),
+// 		 url(path('.woff', font, '')),
+// 		 url(path('.ttf', font, '')),
+// 		 url(path('.svg', font, ''));
+// }
+
+// Without it
+// @font-face {
+// 	font-family: '';
+// 	src: url('../fonts//.eot');
+// 	src: url('../fonts//.eot?#iefix') format('embedded-opentype'),
+// 	     url('../fonts//.woff') format('woff'),
+// 	     url('../fonts//.ttf') format('truetype'),
+// 	     url('../fonts//.svg') format('svg');
+// }
+
+
+
+
+
+// $proxima-nova--bold: 'proxima-bold', sans-serif;
+// $futura--medium: 'futura-medium', sans-serif;
+// $motor-oil: 'motor-oil', sans-serif;
+
+$ss_fallback: Helvetica, Arial, sans-serif;
+
+$font--montserrat: 'Montserrat', $ss_fallback;
+$font--raleway: 'Raleway', $ss_fallback;
+$font--roboto: 'Roboto', $ss_fallback;
+$font--rubik: 'Rubik', 'Roboto', $ss_fallback;

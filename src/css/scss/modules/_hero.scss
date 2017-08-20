@@ -1,0 +1,30 @@
+.hero{
+	width: 100%;
+	height: 80vh;
+	min-height: 270px;
+	overflow: hidden;
+	&.rotating{
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 5;
+		.hero--image{
+			position: absolute;
+			top: 50%;
+			left: 0;
+			opacity: 0;
+			transform: translate3d(0,-50%,0);
+			transition: 0.64s opacity ease;
+			&.active{
+				opacity: 1;
+			}
+		}
+	}
+	&--image{
+		width: 100%;
+		height: auto;
+	}
+	+ .main_content:not(.intro){
+		margin-top: -90px;
+	}
+}

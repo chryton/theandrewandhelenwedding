@@ -1,0 +1,21 @@
+$wedding--primary: #5b2139;
+$wedding--secondary: #efc7ae;
+$wedding--tertiary: #c74575;
+$wedding--quaternary: #edd9b8;
+
+$bg_color--primary: $wedding--primary;
+$bg_color--secondary: $wedding--quaternary;
+
+$btn_color--primary: $wedding--primary;
+$btn_color--secondary: $wedding--quaternary;
+
+$txt--primary: darken($wedding--primary, 20%);
+$txt--secondary: $wedding--tertiary;
+$txt--tertiary: #fff;
+
+
+// OLD
+
+$old--bg: #323875;
+$old--font: #eee;
+$old--shadow: #827d7d;

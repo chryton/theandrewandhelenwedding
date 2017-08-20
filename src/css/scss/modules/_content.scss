@@ -1,47 +1,26 @@
-/* background options */
-/*
-https://www.toptal.com/designers/subtlepatterns/seigaiha/
-https://www.toptal.com/designers/subtlepatterns/japanese-asanoha/
-https://www.toptal.com/designers/subtlepatterns/japanese-sayagata/
-https://www.toptal.com/designers/subtlepatterns/contemporary-china/
-https://www.toptal.com/designers/subtlepatterns/swirl-2/
-https://www.toptal.com/designers/subtlepatterns/contemporary-china-2/
-https://www.toptal.com/designers/subtlepatterns/ep-natural-white/
-https://www.toptal.com/designers/subtlepatterns/topography/
-*/
-
-*{
-	box-sizing: border-box;
-}
-
-html, body{
-	min-height: 100vh;
-	width: 100%;
-	display: block;
-	margin: 0;
-	padding: 0;
-	display: block;
-}
 
 .main_content{
-	min-height: 100vh;
 	width: 100%;
 	padding: 40px 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: url(https://www.toptal.com/designers/subtlepatterns/patterns/seigaiha.png);
-	/*background-color: #323875;*/
+	position: relative;
+	z-index: 10;
 	background-position: center center;
-}
-.main_content--wrapper{
-	width: 80%;
-	max-width: 760px;
-	padding: 40px;
-	box-shadow: 2px 2px 15px #827d7d;
-	background-color: #323875;
-	color: #eeeeee;
-	border-radius: 8px;
+	&.intro{
+		padding: 50vh 0 40px;
+		min-height: 70vh;
+	}
+	&--wrapper{
+		width: 80%;
+		max-width: 760px;
+		padding: 40px;
+		box-shadow: 2px 2px 15px rgba($txt--primary, .2);
+		background-color: $bg_color--primary;
+		color: #eeeeee;
+		border-radius: 8px;
+	}
 }
 
 .content--main_heading{

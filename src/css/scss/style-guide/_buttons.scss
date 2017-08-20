@@ -1,0 +1,40 @@
+// ==========================================================
+//
+//
+//         Style Guide - Buttons
+// 
+//
+// ==========================================================
+
+////////////////////
+// Default Styles //
+////////////////////
+
+
+%btn--pill{
+	&:hover,
+	&:focus{
+		text-decoration: none;
+	}
+}
+
+%btn--ghost_pill{
+	&:hover,
+	&:focus{
+		text-decoration: none;
+	}
+}
+
+%btn--square{
+	&:hover,
+	&:focus{
+		text-decoration: none;
+	}
+}
+
+%btn--ghost_square{
+	&:hover,
+	&:focus{
+		text-decoration: none;
+	}
+}

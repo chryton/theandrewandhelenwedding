@@ -1,0 +1,44 @@
+////////////////////
+// Default Styles //
+////////////////////
+
+*{
+	box-sizing: border-box;
+}
+
+html,
+body{
+	min-height: 100vh;
+	width: 100%;
+	display: block;
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+
+main{
+	position: relative;
+	background: url(https://www.toptal.com/designers/subtlepatterns/patterns/seigaiha.png);
+	/*background-color: #323875;*/
+}
+
+.hidden{
+	display: none !important;
+}
+
+@keyframes fadeIn{
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+/* background options */
+/*
+https://www.toptal.com/designers/subtlepatterns/seigaiha/
+https://www.toptal.com/designers/subtlepatterns/japanese-asanoha/
+https://www.toptal.com/designers/subtlepatterns/japanese-sayagata/
+https://www.toptal.com/designers/subtlepatterns/contemporary-china/
+https://www.toptal.com/designers/subtlepatterns/swirl-2/
+https://www.toptal.com/designers/subtlepatterns/contemporary-china-2/
+https://www.toptal.com/designers/subtlepatterns/ep-natural-white/
+https://www.toptal.com/designers/subtlepatterns/topography/
+*/

@@ -30,11 +30,21 @@
 	&:focus{
 		text-decoration: none;
 	}
+	&.disabled {
+		cursor: none;
+		cursor: not-allowed;
+		background: #888;
+	}
 }
 
 %btn--ghost_square{
 	&:hover,
 	&:focus{
 		text-decoration: none;
+	}
+	&.disabled {
+		cursor: none;
+		cursor: not-allowed;
+		background: #888;
 	}
 }

@@ -112,19 +112,19 @@ $app->get('/check', function (Request $request, Response $response){
 			$is_invited = true;
 
 			$return_data['isInvited'] = true;
-			$return_data['message'] = $row[11];
+			$return_data['message'] = $row[10];
 			$return_data['rowId'] = $row[8];
 			$return_data['attendees'] = array();
-			$return_data['attendees'][0]['attendee'] = $row[12];
-			$return_data['attendees'][0]['attendeeFood'] = $row[13];
-			$return_data['attendees'][1]['attendee'] = $row[14];
-			$return_data['attendees'][1]['attendeeFood'] = $row[15];
-			$return_data['attendees'][2]['attendee'] = $row[16];
-			$return_data['attendees'][2]['attendeeFood'] = $row[17];
-			$return_data['attendees'][3]['attendee'] = $row[18];
-			$return_data['attendees'][3]['attendeeFood'] = $row[19];
-			$return_data['attendees'][4]['attendee'] = $row[20];
-			$return_data['attendees'][4]['attendeeFood'] = $row[21];
+			$return_data['attendees'][0]['attendee'] = $row[11];
+			$return_data['attendees'][0]['attendeeFood'] = $row[12];
+			$return_data['attendees'][1]['attendee'] = $row[13];
+			$return_data['attendees'][1]['attendeeFood'] = $row[14];
+			$return_data['attendees'][2]['attendee'] = $row[15];
+			$return_data['attendees'][2]['attendeeFood'] = $row[16];
+			$return_data['attendees'][3]['attendee'] = $row[17];
+			$return_data['attendees'][3]['attendeeFood'] = $row[18];
+			$return_data['attendees'][4]['attendee'] = $row[19];
+			$return_data['attendees'][4]['attendeeFood'] = $row[20];
 
 			break;
 		}

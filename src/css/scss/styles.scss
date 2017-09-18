@@ -11,18 +11,11 @@
 // ---------------
 // Mixins
 @import 'base/mixins';
-@import 'base/flexbox';
-@import 'base/family';
-
-// Libs
-@import 'base/libs/remodal';
-@import 'base/libs/remodal-default-theme';
 
 
 // ---------------------
 // 		STYLE GUIDE
 // ---------------------
-@import 'style-guide/vars';
 @import 'style-guide/colors';
 @import 'style-guide/fonts';
 @import 'style-guide/buttons';
@@ -33,7 +26,7 @@
 // 		MODULES
 // ------------------
 @import 'modules/global';
-@import 'modules/nav';
 @import 'modules/content';
 @import 'modules/hero';
+@import 'modules/rsvp';
 @import 'modules/footer';

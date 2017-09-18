@@ -161,6 +161,13 @@ $app->post('/update', function (Request $request, Response $response){
 		$requestBodyNames[0][] = $data['attendees'][$i]["food"];
 	}
 
+	if (count($data['attendees']) < 5){
+		for ($i=0; $i < (5 - count($data['attendees']) ); $i++) { 
+			$requestBodyNames[0][] = "";
+			$requestBodyNames[0][] = "";
+		}
+	}
+
 	$requestBodyStatus = array(array(true, $data['attending']));
 
 	$gdata = array();

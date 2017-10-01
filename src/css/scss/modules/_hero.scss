@@ -28,3 +28,34 @@
 		margin-top: -90px;
 	}
 }
+
+
+@media screen and (max-width: 1080px){
+	.hero.rotating .hero--image {
+		top: 0;
+		transform: translate3d(0, -10%, 0);
+	}
+}
+
+@media screen and (max-width: 768px){
+	.hero:not(.rotating)  {
+		height: auto;
+		max-height: 480px;
+	}
+	.hero.rotating{
+		height: 40vh;
+	}
+	.main_content.intro {
+		padding-top: 30vh;
+	}
+	.hero:last-child{
+		max-height: 480px;
+	}
+}
+
+@media screen and (max-width: 640px){
+	.hero:last-child{
+		max-height: 230px !important;
+		min-height: 0;	
+	}
+}

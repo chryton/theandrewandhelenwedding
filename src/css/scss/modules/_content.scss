@@ -19,7 +19,30 @@
 		box-shadow: 2px 2px 15px rgba($txt--primary, .2);
 		background-color: $bg_color--primary;
 		color: #eeeeee;
-		border-radius: 8px;
+		border-radius: 3px;
+	}
+	&--grouping {
+		border: 1px solid $wedding--secondary;
+		padding: 16px;
+	}
+	.icon {
+		display: block;
+		width: 50%;
+		max-width: 80px;
+		margin: 0 auto;
+		&.dinos {
+			width: 75%;
+			max-width: 190px;
+			margin-top: 36px;
+		}
+		&.dino {
+			width: 75%;
+			max-width: 120px;
+			margin-top: 36px;
+		}
+		ul + & {
+			margin-top: 24px;
+		}
 	}
 }
 
@@ -34,6 +57,9 @@
 	font-family: 'Parisienne', cursive;
 	font-size: 28px;
 	font-weight: 400;
+	ul + & {
+		margin-top: 36px;
+	}
 }
 
 p, li{
@@ -78,9 +104,11 @@ a{
 @media screen and (max-width: 650px){
 	.main_content--wrapper{
 		padding: 20px;
+		width: 90%;
 	}
 	.content--main_heading{
 		font-size: 19px;
+		line-height: 1.5;
 	}
 	p, li{
 		font-family: 'Lato', sans-serif;

@@ -161,14 +161,14 @@
 
 	.select_wrapper {
 		position: relative;
-		display: block;
+		display: inline-block;
 		width: calc(100% - 74px);
 		// max-width: 275px;
 		&::after {
 			content: '';
 			display: block;
 			position: absolute;
-			left: calc(80% - 24px);
+			left: calc(100% - 24px);
 			top: 50%;
 			transform: translate(0,-150%);
 			height: 0;

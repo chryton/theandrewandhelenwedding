@@ -1,0 +1,117 @@
+
+.main_content{
+	width: 100%;
+	padding: 40px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 10;
+	background-position: center center;
+	&.intro{
+		padding: 50vh 0 40px;
+		min-height: 70vh;
+	}
+	&--wrapper{
+		width: 80%;
+		max-width: 760px;
+		padding: 40px;
+		box-shadow: 2px 2px 15px rgba($txt--primary, .2);
+		background-color: $bg_color--primary;
+		color: #eeeeee;
+		border-radius: 3px;
+	}
+	&--grouping {
+		border: 1px solid $wedding--secondary;
+		padding: 16px;
+	}
+	.icon {
+		display: block;
+		width: 50%;
+		max-width: 80px;
+		margin: 0 auto;
+		&.dinos {
+			width: 75%;
+			max-width: 190px;
+			margin-top: 36px;
+		}
+		&.dino {
+			width: 75%;
+			max-width: 120px;
+			margin-top: 36px;
+		}
+		ul + & {
+			margin-top: 24px;
+		}
+	}
+}
+
+.content--main_heading{
+	text-align: center;
+	font-family: 'Diplomata SC', cursive;
+	font-size: 32px;
+	font-weight: 400;
+}
+
+.content--sub_heading{
+	font-family: 'Parisienne', cursive;
+	font-size: 28px;
+	font-weight: 400;
+	ul + & {
+		margin-top: 36px;
+	}
+}
+
+p, li{
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+}
+
+li{
+	margin-bottom: 6px;
+}
+
+strong{
+	/*font-family: 'Quicksand', sans-serif;
+	font-weight: 800;*/
+	text-transform: uppercase;
+}
+
+a{
+	color: #fff;
+	position: relative;
+	text-decoration: none;
+	&::after{
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		display: block;
+		width: 100%;
+		height: 2px;
+		background: #fff;
+		transform: translate3d(-50%,0,0);
+		transition: all 0.24s ease;
+	}
+	&:hover{
+		text-decoration: none;
+		&::after{
+			transform: translate3d(-50%,0,0) scale(.9,1);
+		}
+	}
+}
+
+@media screen and (max-width: 650px){
+	.main_content--wrapper{
+		padding: 20px;
+		width: 90%;
+	}
+	.content--main_heading{
+		font-size: 19px;
+		line-height: 1.5;
+	}
+	p, li{
+		font-family: 'Lato', sans-serif;
+		font-size: 14px;
+	}
+}

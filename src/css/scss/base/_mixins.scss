@@ -1,0 +1,178 @@
+@mixin border-radius($radius: 6px) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin box-shadow($shadows...) {
+	-moz-box-shadow: $shadows;
+	-webkit-box-shadow: $shadows;
+	box-shadow: $shadows;
+}
+@mixin gradient($start,$stop) {
+ 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $start), color-stop(100%, $stop));
+	background-image: -webkit-linear-gradient(top, $start, $stop);
+	background-image: -moz-linear-gradient(top, $start, $stop);
+	background-image: -ms-linear-gradient(top, $start, $stop);
+	background-image: -o-linear-gradient(top, $start, $stop);
+	background-image: linear-gradient(top, $start, $stop);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#{$start}, endColorstr=#{$stop});
+}
+@mixin box-sizing($val) {
+	box-sizing: $val;
+	-webkit-box-sizing: $val;
+	-moz-box-sizing: $val;
+}
+@mixin background-size($val: cover) {
+	-webkit-background-size: $val;
+	-moz-background-size: $val;
+	-o-background-size: $val;
+	background-size: $val;
+}
+@mixin user-select() {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+@mixin clearfix() {
+	content: '';
+	display: block;
+	width: 0; height: 0;
+	clear: both;
+}
+@mixin psd-letter-spacing($tracking) {
+  letter-spacing: ($tracking / 1000) * 1em;  
+}
+
+///////////
+// BLITZ //
+///////////
+
+// Hide Text Mixin
+// mixin will hide text on an element
+@mixin hide-text {
+	overflow: hidden;
+	&:before {
+		content: "";
+		display: block;
+		width: 0;
+		height: 100%;
+	}
+}
+
+// Opacity Mixin
+// @param opacity, the opaicity to be set
+@mixin opacity($value) {
+	$IEValue: $value * 100;
+	opacity: $value;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $IEValue + ")";
+	filter: alpha(opacity = $IEValue);
+}
+
+/* Flexbox mixin
+Generates browser prefixes for flexboxes */
+@mixin flexbox {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+// Cubic Bezier Vars
+// CSS cubic-bezier timing functions. Timing functions courtesy of jquery.easie (github.com/jaukia/easie)
+// Timing functions are the same as demo'ed here: http://jqueryui.com/resources/demos/effect/easing.html
+
+// EASE IN
+$ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+$ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+$ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+$ease-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+// EASE OUT
+$ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+$ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+$ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+$ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+// EASE IN OUT
+$ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+$ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+$ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+$ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+$ease-bounce: cubic-bezier(.52,1.64,.37,.66);
+$ease-bounce-through: cubic-bezier(.32,1.25,.375,1.15);
+$ease-slam: cubic-bezier(0.12, 1.95, 0, 0.4);
+
+
+
+// REM to PX conversion mixin
+// Assumes a basline of 62.5% set on the <HTML> tag
+// @param $property, the property to be set
+// @param $values, the size value
+//
+// Usage
+//  @include rem(font-size, 1.6rem);
+//  @include rem(padding, 20px 10px);
+//
+// Output:
+// font-size: 16px;  /* Fallback for IE8
+// font-size: 1.6rem;
+// padding: 20px 10px; /* Fallback for IE8
+// padding: 2rem 1rem;
+
+// Parse Int function for REM mixin
+@function parseInt($n) {
+	@return $n / ($n * 0 + 1);
+}
+
+@mixin rempx($property, $values) {
+	$px: ();
+	$rem: ();
+	@each $value in $values {
+		@if $value == 0 or $value == auto {
+			$px: append($px, $value);
+			$rem: append($rem, $value);
+		}
+		@else {
+			$unit: unit($value);
+			$val: parseInt($value);
+			@if $unit == "px" {
+				$px: append($px, $value);
+				$rem: append($rem, $val / 10 + rem);
+			}
+			@if $unit == "rem" {
+				$px: append($px, $val * 10 + px);
+				$rem: append($rem, $value);
+			}
+		}
+	}
+	@if $px == $rem {
+		#{$property}: $px;
+	}
+	@else {
+		#{$property}: $px;
+		#{$property}: $rem;
+	}
+}
+
+// Share values for multiple properties
+// Example: @include share(padding-top, padding-bottom, 23px);
+@mixin share($props...) {
+	@for $i from 1 to length($props) {
+		#{nth($props, $i)}: nth($props, -1);
+	}
+}

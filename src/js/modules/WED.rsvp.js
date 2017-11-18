@@ -22,11 +22,11 @@ WED.rsvp = (function(WED, $){
 						<form @submit="checkApi" id="rsvp_check" class="rsvp--component">
 							<span class="input_group">
 								<label for="user_zip"> Zipcode </label>
-								<input name="user_zip" id="user_zip" type="number" placeholder="Zipcode">
+								<input name="user_zip" id="user_zip" type="number" placeholder="Zipcode" required="true">
 							</span>
 							<span class="input_group">
 								<label for="user_id"> ID </label>
-								<input name="user_id" id="user_id" type="number" placeholder="ID">
+								<input name="user_id" id="user_id" type="number" placeholder="ID" required="true">
 							</span>
 							<button type="submit" class="submit">Lookup Your RSVP</button>
 						</form>
@@ -35,6 +35,10 @@ WED.rsvp = (function(WED, $){
 						checkApi: function(e) {
 							e.preventDefault();
 							e.stopImmediatePropagation();
+
+							if ($('#user_zip').val().length < 0 || $('#user_id').val().length < 0) {
+								WED.data.state = "sorry";
+							}
 		
 							$.ajax({
 								type: 'GET',
